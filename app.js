@@ -15,8 +15,8 @@ const { globalErrorHandler } = require('./controllers/error.controllers');
 const app = express();
 app.use(express.json());
 
-app.use(helmet);
-app.use(compression);
+app.use(helmet());
+app.use(compression());
 
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
 else app.use(morgan('combined'));
